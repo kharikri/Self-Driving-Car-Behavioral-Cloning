@@ -242,14 +242,14 @@ The following pictures illustrate some of the data augmentation and preprocessin
 ![alt text](https://github.com/kharikri/SelfDrivingCar-BehavioralCloning/blob/master/Images/center_2016_12_01_13_30_48_287.jpg)
 ![alt text](https://github.com/kharikri/SelfDrivingCar-BehavioralCloning/blob/master/Images/flipped_center_2016_12_01_13_30_48_287.jpg)
 
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Center Camera Image &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Flipped Center Camera Image
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Center Camera Image &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Flipped Center Camera Image
 
 In the cropped picture below we crop the top 70 pixels and the bottom 25 pixels to eliminate the noise such as sky, trees, dashboard, steering wheel etc. Cropping has a nice additional property of reducing the size of the data.
 
 ![alt text](https://github.com/kharikri/SelfDrivingCar-BehavioralCloning/blob/master/Images/center_2016_12_01_13_30_48_287.jpg)
 ![alt text](https://github.com/kharikri/SelfDrivingCar-BehavioralCloning/blob/master/Images/cropped_center_2016_12_01_13_30_48_287.jpg)
 
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Center Camera Image &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Cropped Center Camera Image
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Center Camera Image &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Cropped Center Camera Image
 
 Besides cropping I normalized the data from 0 to 255 to -0.5 to 0.5. Neural networks work well with small numbers. Both the preprocessing steps (cropping and normalization) were done inside the model so during the simulation the same preprocessing is done in the autonomous mode.
 
