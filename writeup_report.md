@@ -239,15 +239,15 @@ First I collect the center camera images and then I augment these images by flip
 
 The following pictures illustrate some of the data augmentation and preprocessing methods used. These two pictures show center camera image and its flipped image to augment the data. Track one is predominantly left turning. Flipping the image creates a right turning track.
 
-![alt text](file:///C:/Users/Kris/Desktop/center_2016_12_01_13_30_48_287.jpg)
-![alt text](file:///C:/Users/Kris/Desktop/flipped_center_2016_12_01_13_30_48_287.jpg)
+![alt text](https://github.com/kharikri/SelfDrivingCar-BehavioralCloning/blob/master/Images/center_2016_12_01_13_30_48_287.jpg)
+![alt text](https://github.com/kharikri/SelfDrivingCar-BehavioralCloning/blob/master/Images/flipped_center_2016_12_01_13_30_48_287.jpg)
 
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Center Camera Image &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Flipped Center Camera Image
 
 In the cropped picture below we crop the top 70 pixels and the bottom 25 pixels to eliminate the noise such as sky, trees, dashboard, steering wheel etc. Cropping has a nice additional property of reducing the size of the data.
 
 ![alt text](https://github.com/kharikri/SelfDrivingCar-BehavioralCloning/blob/master/Images/center_2016_12_01_13_30_48_287.jpg)
-![alt text](file:///C:/Users/Kris/Desktop/cropped_center_2016_12_01_13_30_48_287.jpg)
+![alt text](https://github.com/kharikri/SelfDrivingCar-BehavioralCloning/blob/master/Images/cropped_center_2016_12_01_13_30_48_287.jpg)
 
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Center Camera Image &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Cropped Center Camera Image
 
