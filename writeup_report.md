@@ -26,6 +26,7 @@ My project includes the following files:
 * **drive.py** for driving the car in autonomous mode
 * **model.h5** containing a trained convolution neural network 
 * **writeup_report.md** summarizing the results
+* **video.mp4** video showing two laps of autonomous driving
 
 In addition, I included the following model file which contains a trained Nvidia model with only 600 images to get my data pipeline and model architecture correct. This took only 1 min of training on my CPU based machine for 3 epochs.
 * **model_600images_1min_3e.h5**
@@ -180,13 +181,13 @@ For details about how I created the training data, see the next section.
 
 #### 1. Solution Design Approach
 
-I followed David Silver's lecture on building and training this model. My first task was to make sure I have the entire pipeline from collecting data, training the network, generating the model and running the model on a test track was working. Once this was accomplished I experimented with various architectures. From the traffic sign classification project, I learned that convolution networks are ideal for image detection and classification. This being an image detection problem using convolution networks made sense.
+My first task was to make sure I have the entire pipeline from collecting data, training the network, generating the model and running the model on a test track was working. Once this was accomplished I experimented with various architectures. From the traffic sign classification project, I learned that convolution networks are ideal for image detection and classification. This being an image detection problem using convolution networks made sense.
 
-I first tried with just two layers (one convolution and one fully connected layer) and then I tried the LeNet architecture of two convolution layers with subsampling and two fully connected layers. Unlike in David's videos where the car seemed to be on the track even with these simple architectures mine quickly veered away from the track. Then with the Nvidia architecture (described in the next section) my car was on the track for slightly longer duration. The car had a strong tendency to go off from the road especially at the turns. To teach the car to drive in the center of the road I used the left camera images and added a correction factor to their steering angles to induce the car to move towards the center. Similarly, I used the right camera images and subtracted a correction factor to induce the car to drive towards the center. Furthermore, I flipped all of these images left to right and the steering angles to augment the data. Track one is predominantly left turning and flipping this creates a right turning track. This data enhancement seemed to stabilize my car on the simulator.
+I first tried with just two layers (one convolution and one fully connected layer) and then I tried the LeNet architecture of two convolution layers with subsampling and two fully connected layers. Unlike in David Silver's videos in the lecture where the car seemed to be on the track even with these simple architectures mine quickly veered away from the track. Then with the Nvidia architecture (described in the next section) my car was on the track for slightly longer duration. The car had a strong tendency to go off from the road especially at the turns. To teach the car to drive in the center of the road I used the left camera images and added a correction factor to their steering angles to induce the car to move towards the center. Similarly, I used the right camera images and subtracted a correction factor to induce the car to drive towards the center. Furthermore, I flipped all of these images left to right and the steering angles to augment the data. Track one is predominantly left turning and flipping this creates a right turning track. This data enhancement seemed to stabilize my car on the simulator.
 
-I split my image and steering angle data into a training (80%) and validation (20%) set to see how well the model was performing. My initial models had validation errors rising after few epochs indicating overfitting. I introduced dropout after every convolution layer which reduced overfitting. While this is theoretically sound, the ultimate test is to run the model on the simulator in an autonomous mode to see if the model generalizes well. After augmenting the data and using the Nvidia architecture, I am able to go around the track-one several times.
+I split my image and steering angle data into a training (80%) and validation (20%) set to see how well the model was performing. My initial models had validation errors rising after few epochs indicating overfitting. I introduced dropout after every convolution layer which reduced overfitting. While this is theoretically sound, the ultimate test is to run the model on the simulator in an autonomous mode to see if the model generalizes well. After augmenting the data and using the Nvidia architecture, I am able to go around the track-one several times autonomously.
 
-As I have a CPU based machine to get my data collection pipeline and model architecture correct I experimented with only 600 randomly selected images out of a total of 48216 images. Using 600 images for training only took about 1 minute to produce the model for 3 epochs. I've included this model in the file called **model_600images_1min_3e.h5** file which surprisingly does quite well on the test track for more than half the lap!
+With my CPU-based machine, to get my data collection pipeline and model architecture correct I experimented with only 600 randomly selected images out of a total of 48216 images. Using 600 images for training only took about 1 minute to produce the model for 3 epochs. I've included this model in the file called **model_600images_1min_3e.h5** file which surprisingly does quite well on the test track for more than half the lap!
 
 #### 2. Final Model Architecture
 
@@ -194,9 +195,9 @@ For the final model architecture, I used the Nvidia approach. This architecture 
 
 #### 3. Creation of the Training Set & Training Process
 
-I used the Udacity supplied image data set for my training. The original data set consisted of 24108 images. After augmentation by flipping the images I doubled the dataset to 48216 images which was just about the number of images my CPU based computer (quad-core CPU with 8GB of memory) could handle without running out of memory.
+I used the Udacity supplied image data set for my training. The original data set consisted of 24108 images. After augmentation by flipping the images I doubled the dataset to 48216 images which was just about the number of images my CPU-based computer (quad-core CPU with 8GB of memory) could handle without running out of memory.
 
-I built a simple pipeline to collect my image dataset into a list as shown below:
+I built a simple pipeline to collect my image dataset into a list as shown below. I do not use Keras generator:
 ```
 for line in lines:
     #Center camera images
@@ -271,6 +272,6 @@ A video of the car running autonomously around the track for little more than tw
 
 
 ## Summary
-My overall take on the project is it is fairly straightforward to collect, augment, and preprocess data, build and train the model and test the model on the simulator but time consuming to perform various experiments to make sure the model generalizes well to the test track. These experiments included data augmentation methods, model architecture selection, architecture fine tuning (ex: relu vs elu, dropouts, etc), optimal number of epochs for training, and testing on the track. I really enjoyed this project as it gave me a good idea of the complexities and bottlenecks of deep neural networks.
+My overall take on the project is it is fairly straightforward to collect, augment, and preprocess data, build and train the model and test the model on the simulator, but time consuming to perform various experiments to make sure the model generalizes well to the test track. These experiments included data augmentation methods, model architecture selection, architecture fine tuning (ex: relu vs elu, dropouts, etc), optimal number of epochs for training, and testing on the track. I really enjoyed this project as it gave me a good idea of the complexities and bottlenecks of deep neural networks.
 
 I'd like to thank David Silver for his excellent lecture in explaining this project which helped me implement it.
