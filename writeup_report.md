@@ -199,6 +199,18 @@ The final architecture is shown below:
 
 ![alt text](https://github.com/kharikri/SelfDrivingCar-BehavioralCloning/blob/master/Images/Nvidia%20Arch.jpg)
 
+The total number of parameters with this model was 348,219 with the following distribution for each layer:
+
+CNN L1:    1824                     
+CNN L2:  21636                        
+CNN L3:  43248                       
+CNN L4:  27712                         
+CNN L5:  36928   
+FC L1:   211300                     
+FC L2:   5050                          
+FC L3:   510                         
+Output:  11                             
+
 #### 3. Creation of the Training Set & Training Process
 
 I used the Udacity supplied image data set for my training. The original data set consisted of 24108 images. After augmentation by flipping the images I doubled the dataset to 48216 images which was just about the number of images my CPU-based computer (quad-core CPU with 8GB of memory) could handle without running out of memory.
