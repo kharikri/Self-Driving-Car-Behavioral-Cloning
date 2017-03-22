@@ -268,7 +268,7 @@ The car can be driven autonomously on the test track using the generated model (
 python drive.py model.h5
 ```
 
-A video of the car running autonomously around the track for little more than two laps can be seen [here](https://???). I used 800x600 resolution on the simulator for this video. 
+A video of the car running autonomously around the track for little more than two laps can be seen [here](<iframe width="560" height="315" src="https://www.youtube.com/embed/tjqOhXgMuCQ?ecver=1" frameborder="0" allowfullscreen></iframe>). I used 800x600 resolution on the simulator for this video. 
 
 
 ## Summary
