@@ -193,7 +193,11 @@ With my CPU-based machine, to get my data collection pipeline and model architec
 
 #### 2. Final Model Architecture
 
-For the final model architecture, I used the Nvidia approach. This architecture consists of 5 convolution layers followed by three fully connected layers. We flatten the network before the first fully connected layer. Relu activation is used to introduce non-linearity. For this final model the training took 4 hrs on my CPU-based laptop.
+For the final model architecture, I used the Nvidia approach. This architecture consists of 5 convolution layers followed by three fully connected layers. The first three convolution layers are strided by 2x2 filters and the last two are unstrided. We flatten the network before the first fully connected layer. Relu activation is used to introduce non-linearity. For this final model the training took 4 hrs on my CPU-based laptop. 
+
+The final architecture is shown below:
+
+![alt text](https://github.com/kharikri/SelfDrivingCar-BehavioralCloning/blob/master/Images/Nvidia%20Arch.jpg)
 
 #### 3. Creation of the Training Set & Training Process
 
